@@ -1,6 +1,6 @@
 # SwagLabsProject
 This is my test automation demo project.
-I'm mostly self thought, participated a few years back in a course to learn basic Selenium with Java but all other frameworks and integrations incorperated here are from online courses and sources.
+I'm mostly self thought, participated a few years back in a course to learn basic Selenium with Java but all other frameworks and integrations incorporated here are from online courses and sources.
 Project includes:
 - TestNG annotations and Listeners class
 - Maven
