@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="TestCases.Listeners"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Test(failed)">
+    <classes>
+      <class name="TestCases.Login_Test">
+        <methods>
+          <include name="openURL"/>
+          <include name="initialize"/>
+          <include name="T01_successfulLogin" invocation-numbers="0"/>
+          <include name="finalize"/>
+        </methods>
+      </class> <!-- TestCases.Login_Test -->
+      <class name="TestCases.Checkout_Test">
+        <methods>
+          <include name="T02_selectSingleItem"/>
+          <include name="T03_continueToCheckout"/>
+          <include name="initialize"/>
+          <include name="finalize"/>
+        </methods>
+      </class> <!-- TestCases.Checkout_Test -->
+      <class name="TestCases.Products_Test">
+        <methods>
+          <include name="T03_addItemsToCart_5"/>
+          <include name="T03_addItemsToCart_4"/>
+          <include name="T03_addItemsToCart_6"/>
+          <include name="finalize"/>
+          <include name="initialize"/>
+          <include name="T03_addItemsToCart_1"/>
+          <include name="T03_addItemsToCart_3"/>
+          <include name="T03_addItemsToCart_2"/>
+        </methods>
+      </class> <!-- TestCases.Products_Test -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

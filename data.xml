@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<externalData>
+
+<browsers>
+<chromeDriver>webdriver.chrome.driver</chromeDriver>
+<chromeDriverPath>D://Selenium_drivers/chromedriver 83/chromedriver.exe</chromeDriverPath>
+<firefoxDriver>webdriver.gecko.driver</firefoxDriver>
+<firefoxDriverPath>D://Selenium_drivers/geckodriver 0.26.0/geckodriver.exe</firefoxDriverPath>
+<ieDriver>webdriver.ie.driver</ieDriver>
+<ieDriverPath>D://Selenium_drivers/iedriver 3.150.1/IEDriverServer.exe</ieDriverPath>
+    </browsers>    
+
+<localPaths>
+<extentReportFile>D://Selenium_ExtentReports/Tests/finalProject.html</extentReportFile>
+<propertiesFile>D://UdemyWorkspace/E2EProject/src/main/java/TestCases/data.properties</propertiesFile>
+</localPaths>
+
+
+
+
+
+<site>https://www.saucedemo.com/</site>
+
+
+</externalData>

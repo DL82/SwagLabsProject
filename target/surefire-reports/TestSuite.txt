@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 22, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 81.129 s <<< FAILURE! - in TestSuite
+TestCases.Login_Test.T01_successfulLogin  Time elapsed: 1.409 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	expected [Products] but found [Products_123123]
+	at TestCases.Login_Test.T01_successfulLogin(Login_Test.java:67)
+
+TestCases.Products_Test.T03_addItemsToCart_6  Time elapsed: 0.848 s  <<< FAILURE!
+java.lang.AssertionError: expected [6] but found [7]
+	at TestCases.Products_Test.T03_addItemsToCart_6(Products_Test.java:152)
+
+TestCases.Checkout_Test.T02_selectSingleItem  Time elapsed: 0.628 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	expected [1] but found [3]
+	at TestCases.Checkout_Test.T02_selectSingleItem(Checkout_Test.java:67)
+
+TestCases.Checkout_Test.T03_continueToCheckout  Time elapsed: 3.446 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	expected [1] but found [3],
+	expected [15.99] but found [15.99_123]
+	at TestCases.Checkout_Test.T03_continueToCheckout(Checkout_Test.java:80)
+

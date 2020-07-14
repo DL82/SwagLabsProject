@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="3" ignored="0" total="11" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="39197" started-at="2020-06-14T22:28:04 IDT" finished-at="2020-06-14T22:28:44 IDT">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="39197" started-at="2020-06-14T22:28:04 IDT" finished-at="2020-06-14T22:28:44 IDT">
+      <class name="TestCases.Login_Test">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:TestCases.Login_Test@10b48321]" name="initialize" is-config="true" duration-ms="5027" started-at="2020-06-14T22:28:04 IDT" finished-at="2020-06-14T22:28:10 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="1584" started-at="2020-06-14T22:28:10 IDT" finished-at="2020-06-14T22:28:11 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="PASS" signature="T01_invalidLoginAttempts(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_invalidLoginAttempts" duration-ms="2317" started-at="2020-06-14T22:28:11 IDT" data-provider="invalidCredentials" finished-at="2020-06-14T22:28:13 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Daniel]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[aaaa]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid credentials]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_invalidLoginAttempts -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="65" started-at="2020-06-14T22:28:13 IDT" finished-at="2020-06-14T22:28:14 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="PASS" signature="T01_invalidLoginAttempts(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_invalidLoginAttempts" duration-ms="2481" started-at="2020-06-14T22:28:14 IDT" data-provider="invalidCredentials" finished-at="2020-06-14T22:28:16 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bbbb]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[only username is invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_invalidLoginAttempts -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="60" started-at="2020-06-14T22:28:16 IDT" finished-at="2020-06-14T22:28:16 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="PASS" signature="T01_invalidLoginAttempts(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_invalidLoginAttempts" duration-ms="2280" started-at="2020-06-14T22:28:16 IDT" data-provider="invalidCredentials" finished-at="2020-06-14T22:28:18 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[cccc]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[only password is invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_invalidLoginAttempts -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="58" started-at="2020-06-14T22:28:18 IDT" finished-at="2020-06-14T22:28:18 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="PASS" signature="T01_invalidLoginAttempts(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_invalidLoginAttempts" duration-ms="2267" started-at="2020-06-14T22:28:18 IDT" data-provider="invalidCredentials" finished-at="2020-06-14T22:28:21 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[username is missing]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_invalidLoginAttempts -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="64" started-at="2020-06-14T22:28:21 IDT" finished-at="2020-06-14T22:28:21 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="PASS" signature="T01_invalidLoginAttempts(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_invalidLoginAttempts" duration-ms="2316" started-at="2020-06-14T22:28:21 IDT" data-provider="invalidCredentials" finished-at="2020-06-14T22:28:23 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[password is missing]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_invalidLoginAttempts -->
+        <test-method status="PASS" signature="openURL()[pri:0, instance:TestCases.Login_Test@10b48321]" name="openURL" is-config="true" duration-ms="47" started-at="2020-06-14T22:28:23 IDT" finished-at="2020-06-14T22:28:23 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openURL -->
+        <test-method status="FAIL" signature="T01_successfulLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.Login_Test@10b48321]" name="T01_successfulLogin" duration-ms="863" started-at="2020-06-14T22:28:23 IDT" data-provider="validCredentials" finished-at="2020-06-14T22:28:24 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[valid credentials]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [Products] but found [Products_123123]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [Products] but found [Products_123123]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TestCases.Login_Test.T01_successfulLogin(Login_Test.java:67)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_successfulLogin -->
+        <test-method status="PASS" signature="finalize()[pri:0, instance:TestCases.Login_Test@10b48321]" name="finalize" is-config="true" duration-ms="2303" started-at="2020-06-14T22:28:24 IDT" finished-at="2020-06-14T22:28:27 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalize -->
+      </class> <!-- TestCases.Login_Test -->
+      <class name="TestCases.Checkout_Test">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="initialize" is-config="true" duration-ms="4596" started-at="2020-06-14T22:28:27 IDT" finished-at="2020-06-14T22:28:31 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="T01_validLogin()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="T01_validLogin" duration-ms="938" started-at="2020-06-14T22:28:31 IDT" finished-at="2020-06-14T22:28:32 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_validLogin -->
+        <test-method status="FAIL" signature="T02_selectSingleItem()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="T02_selectSingleItem" duration-ms="361" started-at="2020-06-14T22:28:32 IDT" finished-at="2020-06-14T22:28:33 IDT">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [1] but found [3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [1] but found [3]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TestCases.Checkout_Test.T02_selectSingleItem(Checkout_Test.java:67)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T02_selectSingleItem -->
+        <test-method status="FAIL" signature="T03_continueToCheckout()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="T03_continueToCheckout" duration-ms="3179" started-at="2020-06-14T22:28:33 IDT" finished-at="2020-06-14T22:28:36 IDT">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [1] but found [3],
+expected [15.99] but found [15.99_123]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [1] but found [3],
+expected [15.99] but found [15.99_123]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TestCases.Checkout_Test.T03_continueToCheckout(Checkout_Test.java:80)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T03_continueToCheckout -->
+        <test-method status="PASS" signature="T04_checkout_StepOne()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="T04_checkout_StepOne" duration-ms="6650" started-at="2020-06-14T22:28:37 IDT" finished-at="2020-06-14T22:28:43 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T04_checkout_StepOne -->
+        <test-method status="PASS" signature="T05_checkout_StepTwo()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="T05_checkout_StepTwo" duration-ms="277" started-at="2020-06-14T22:28:43 IDT" finished-at="2020-06-14T22:28:43 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T05_checkout_StepTwo -->
+        <test-method status="PASS" signature="finalize()[pri:0, instance:TestCases.Checkout_Test@6b67034]" name="finalize" is-config="true" duration-ms="242" started-at="2020-06-14T22:28:43 IDT" finished-at="2020-06-14T22:28:44 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalize -->
+      </class> <!-- TestCases.Checkout_Test -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,5 @@
+TestCases\Login_Test.class
+TestCases\Products_Test.class
+TestCases\Listeners.class
+TestCases\Checkout_Test.class
+TestCases\Cart_Test.class
