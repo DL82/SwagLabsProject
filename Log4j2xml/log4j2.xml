@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<properties>
+<property name="basePath">./reports/logs</property>
+</properties>
+  <Appenders>
+ <RollingFile name="File" fileName="${basePath}/Log4j.log" filePattern="${basePath}/log %d{yyyy-MM-dd HH'h'mm'm'}.log">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+  <sizeBasedTriggeringPolicy size="5MB" />
+    </RollingFile>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+    <Loggers>
+  <!--   
+  <Logger name="[[replace_package_name]].[[replace_with_class_name]]" level="trace" additivity="false"> LEVEL error / trace
+      <AppenderRef ref="File"/>
+    </Logger> 
+    -->
+    <Root level="trace">
+      <AppenderRef ref="File"/> <!-- ref = Console / File -->
+    </Root>
+  </Loggers>
+</Configuration>

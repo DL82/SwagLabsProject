@@ -2,14 +2,14 @@ package TestCases;
 
 import java.io.IOException;
 
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import pageObjects.General;
+import pageObjects.Cart;
+import pageObjects.Global;
 import pageObjects.Item;
 import pageObjects.Login;
 import pageObjects.Products;
@@ -20,8 +20,8 @@ public class Products_Test extends Base {
 	SoftAssert softAssert = new SoftAssert();
 	Products prod;
 	Item item;
-	General g;
-	Actions act;
+	Global glob;
+	Cart cart;
 
 	@BeforeClass
 	public void initialize() throws IOException {
@@ -38,119 +38,138 @@ public class Products_Test extends Base {
 	@Test
 	public void T01_validLogin() {
 		Login l = new Login(driver);
-		l.getUsername().sendKeys("standard_user");
-		l.getPassword().sendKeys("secret_sauce");
-		l.getSubmit().click();
+		addText(l.getUsername(), "standard_user");
+		addText(l.getPassword(), "secret_sauce");
+		click(l.getSubmit());
+		prod = new Products(driver);
+
+		String expected = "Products";
+		String actual = getText(prod.getPageTitle());
+		Assert.assertEquals(actual, expected);
+
+		System.out.println("Successful navigation to page: " + getText(prod.getPageTitle()));
 	}
 
 	@Test
-	public void T02_getPageTitle() {
+	public void T02_addItemsToCart() throws InterruptedException {
 		prod = new Products(driver);
-		Assert.assertEquals("Products", prod.getPageTitle().getText());
-		System.out.println("Successful navigation to page: " + prod.getPageTitle().getText());
+		// item = new Item(driver);
+		glob = new Global(driver);
+
+		prod.clickAdd();
+
+		String expected = "6";
+		String actual = getText(glob.getBadge());
+		Assert.assertEquals(actual, expected);
 	}
 
 	@Test
-	public void T03_addItemsToCart_1() throws InterruptedException {
-		System.out.println("~~~ Scenario: Add all items to cart ~~~");
+	public void T03_orderByNameDescending() throws InterruptedException {
 		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
+		glob = new Global(driver);
 
-		prod.getItem0().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("1", g.getBadge().getText());
-		Thread.sleep(2000);
+		prod.orderNameDesc();
+
+		String expected = "Test.allTheThings() T-Shirt (Red)";
+		String actual = prod.getFirstItem();
+		Assert.assertEquals(actual, expected);
 	}
 
-	@Test(dependsOnMethods = { "T03_addItemsToCart_1" })
-	public void T03_addItemsToCart_2() throws InterruptedException {
+	@Test
+	public void T04_removeCurrentFirstIndex_1() throws InterruptedException {
 		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
+		glob = new Global(driver);
+
+		prod.removeFirstItem();
+
+		String expected = "5";
+		String actual = getText(glob.getBadge());
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void T05_orderByPriceAscending() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+
+		prod.orderPriceAsc();
 		
-		prod.getItem1().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("2", g.getBadge().getText());
-		Thread.sleep(2000);
+		String expected = "Sauce Labs Onesie";
+		String actual = prod.getFirstItem();
+		Assert.assertEquals(actual, expected);
 	}
 
-	@Test(dependsOnMethods = { "T03_addItemsToCart_2" })
-	public void T03_addItemsToCart_3() throws InterruptedException {
+	@Test
+	public void T06_removeCurrentFirstIndex_2() throws InterruptedException {
 		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
+		glob = new Global(driver);
+
+		prod.removeFirstItem();
+
+		String expected = "4";
+		String actual = getText(glob.getBadge());
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void T07_orderByPriceDescending() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+
+		prod.orderPriceDesc();
+
+		String expected = "Sauce Labs Fleece Jacket";
+		String actual = prod.getFirstItem();
+		Assert.assertEquals(actual, expected);
+	}
+
+	
+	@Test
+	public void T08_removeCurrentFirstIndex_3() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+
+		prod.removeFirstItem();
+
+		String expected = "3";
+		String actual = getText(glob.getBadge());
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void T09_orderByNameAscending() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+
+		prod.orderNameAsc();
+
+		String expected = "Sauce Labs Backpack";
+		String actual = prod.getFirstItem();
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void T10_removeCurrentFirstIndex_4() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+
+		prod.removeFirstItem();
+
+		String expected = "2";
+		String actual = getText(glob.getBadge());
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void T11_goToCart() throws InterruptedException {
+		prod = new Products(driver);
+		glob = new Global(driver);
+		cart = new Cart(driver);
 		
-		prod.getItem2().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("3", g.getBadge().getText());
-		Thread.sleep(2000);
-	}
+		click(glob.getCart());
 
-	@Test(dependsOnMethods = { "T03_addItemsToCart_3" })
-	public void T03_addItemsToCart_4() throws InterruptedException {
-		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
-
-		prod.getItem3().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("4", g.getBadge().getText());
-		Thread.sleep(2000);
-	}
-
-	@Test(dependsOnMethods = { "T03_addItemsToCart_4" })
-	public void T03_addItemsToCart_5() throws InterruptedException {
-		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
-		
-		prod.getItem4().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("5", g.getBadge().getText());
-		Thread.sleep(2000);
-	}
-
-	@Test (dependsOnMethods={"T03_addItemsToCart_5"})
-	public void T03_addItemsToCart_6() throws InterruptedException {
-		prod = new Products(driver);
-		item = new Item(driver);
-		g = new General(driver);
-		
-		prod.getItem5().click();
-		System.out.println(driver.getCurrentUrl());
-		item.getAdd().click();
-		System.out.println("Did we add item " + item.getName().getText() + " to the cart? "
-				+ item.getRemove().isDisplayed());
-		// System.out.println(item.getRemoveButton().isDisplayed());
-		item.getBack().click();
-		Assert.assertEquals("7", g.getBadge().getText());	
-		Thread.sleep(2000);
-		System.out.println("~~~ End of Scenario ~~~");
+		String expected = "Your Cart";
+		String actual = getText(cart.getTitle());
+		Assert.assertEquals(actual, expected);
 	}
 }

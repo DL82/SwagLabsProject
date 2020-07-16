@@ -18,8 +18,8 @@ public class TakeScreenshot extends Base{
 	        FileUtils.copyFile(SrcFile, DestFile);
 	    }
 	 
-	 public void takeSS(String testName) throws Exception {
-		 String path = System.getProperty("user.dir") +"/reports/screenshots/"+ testName + "_" + getDateTime() +".png";
+	 public void takeSS(String className, String methodName) throws Exception {
+		 String path = System.getProperty("user.dir") +"/reports/screenshots/" + getDateTime() + " - " + className + " - " + methodName + ".png";
 		 screenShot(driver, path) ;
 	 } 
 }
