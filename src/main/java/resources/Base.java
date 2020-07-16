@@ -8,7 +8,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -21,24 +23,26 @@ public class Base {
 	public WebDriver initializeDriver() throws IOException {
 
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream(
-				"D://UdemyWorkspace/E2EProject/src/main/java/resources/data.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") +"/src/main/java/resources/data.properties");
+				 //"D://UdemyWorkspace/E2EProject/src/main/java/resources/data.properties"
 		prop.load(fis);
-
-		String browserName = prop.getProperty("browser1");
-
-		System.out.println("~~~Test started in browser: " + browserName + "~~~");
-
-		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D://Selenium_drivers/chromedriver 83/chromedriver.exe");
-			driver = new ChromeDriver();
-
+		
+		String browserName = System.getProperty("browser"); /** Running from Jenkins **/
+		//String browserName = prop.getProperty("browser"); /** Running from Eclipse **/
+		String driverPath = System.getProperty("user.dir") +"/drivers/";
+		if (browserName.contains("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			if(browserName.contains("head")) {
+				options.addArguments("headless");
+			}
+			System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe"); //"D://Selenium_drivers/chromedriver 83/chromedriver.exe"
+			driver = new ChromeDriver(options);
 		} else if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "D://Selenium_drivers/geckodriver 0.26.0/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe"); // "D://Selenium_drivers/geckodriver 0.26.0/geckodriver.exe"
 			driver = new FirefoxDriver();
 
 		} else if (browserName.equals("ie")) {
-			System.setProperty("webdriver.ie.driver", "D://Selenium_drivers/iedriver 3.150.1/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", driverPath + "IEDriverServer.exe"); //"D://Selenium_drivers/iedriver 3.150.1/IEDriverServer.exe"
 			driver = new InternetExplorerDriver();
 		}
 
@@ -46,19 +50,28 @@ public class Base {
 		return driver;
 	}
 
-	public String getDateTime() {
+	public static String getDateTime() {
 		Date d = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.YYYY HH_mm_ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.YYYY HH'h'mm'm'");
 		String dateTime = sdf.format(d).toString();
 		return dateTime;
 	}
-
-	/*
-	public void takeSnapShot(WebDriver driver, String fileWithPath) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) driver);
-		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File DestFile = new File(fileWithPath);
-		FileUtils.copyFile(SrcFile, DestFile);
+	
+	public void addText(WebElement element, String text) {
+		element.clear();
+		element.sendKeys(text);
 	}
-	*/
+	
+	public void click(WebElement element) {
+		element.click();
+	}
+	
+	public void getAtt(WebElement element,String attribute) {
+		element.getAttribute(attribute);
+	}
+	
+	public String getText(WebElement element) {
+		String text = element.getText();
+		return text;
+	}	
 }

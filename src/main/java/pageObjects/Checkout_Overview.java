@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ WebDriver driver;
 	private By pageTitle = By.cssSelector("div[class='subheader']");
 	private By cancel = By.cssSelector("a[class='cart_cancel_link btn_secondary']");
 	private By finish = By.cssSelector("a[class='btn_action cart_button']");
+	private By paymentInfo = By.cssSelector("div[class='summary_value_label']");
 	
 	//Items list
 	private By name = By.cssSelector("div[class='inventory_item_name']");
@@ -38,14 +41,14 @@ WebDriver driver;
 	public WebElement getFinish() {
 		return driver.findElement(finish);
 	}
-	public WebElement getName() {
-		return driver.findElement(name);
+	public List<WebElement> getName() {
+		return driver.findElements(name);
 	}
-	public WebElement getDesc() {
-		return driver.findElement(desc);
+	public List<WebElement> getDesc() {
+		return driver.findElements(desc);
 	}
-	public WebElement getPrice() {
-		return driver.findElement(price);
+	public List<WebElement> getPrice() {
+		return driver.findElements(price);
 	}
 	public WebElement getOrder() {
 		return driver.findElement(order);
@@ -58,6 +61,9 @@ WebDriver driver;
 	}
 	public WebElement getTax() {
 		return driver.findElement(tax);
+	}
+	public WebElement getPaymentInfo() {
+		return driver.findElement(paymentInfo);
 	}
 	
 	

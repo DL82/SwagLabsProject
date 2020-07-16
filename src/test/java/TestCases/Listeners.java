@@ -22,8 +22,11 @@ public class Listeners extends Base implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-
-		test = extent.createTest(result.getMethod().getMethodName());
+		String[] classNameSplit = result.getTestClass().getName().split("TestCases.");
+		String className = classNameSplit[1];
+		String[] methodNameSplit = result.getMethod().getMethodName().split("_");
+		String methodName = methodNameSplit[1];
+		test = extent.createTest(className + " - " + methodName);
 	}
 
 	@Override
@@ -34,13 +37,15 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-		test.log(Status.FAIL, result.getThrowable());
+		test.log(Status.FAIL, result.getThrowable().getMessage());
 		
-		String name = result.getMethod().getMethodName();
+		String[] classNameSplit = result.getTestClass().getName().split("TestCases.");
+		String className = classNameSplit[1];
+		String[] methodNameSplit = result.getMethod().getMethodName().split("_");
+		String methodName = methodNameSplit[1];
 			try {
-				ss.takeSS(name);
+				ss.takeSS(className,methodName);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}

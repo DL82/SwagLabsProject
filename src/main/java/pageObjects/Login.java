@@ -30,9 +30,8 @@ public class Login {
 		return driver.findElement(submit);
 	}
 	
-	public String getError() {
-		String expErr = driver.findElement(error).getText();
-		return expErr;
+	public WebElement getError() {
+		return driver.findElement(error);
 	}
 	
 }
