@@ -1,0 +1,7 @@
+Log4j2 xml file added in a separate folder.
+The folder should be added manualy as a 'source' folder in the project's build path.
+1. right-click the folder in Eclipse
+2. click Build Path
+3. click Configure Build Path
+4. make sure the Source tab is active and click Add Folder
+5. go to the Log4j2 fodler and click OK
